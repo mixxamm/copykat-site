@@ -35,8 +35,6 @@ jobs:
 
       - name: Build static site
         run: npm run build
-        env:
-          NEXT_PUBLIC_BASE_PATH: /copykat-site
 
       - name: Test rendered HTML
         run: node --test tests/rendered-html.test.mjs
