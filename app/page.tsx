@@ -8,6 +8,7 @@ FORM: Clipboard Flight Recorder, grounded direction five, composition C with com
 
 "use client";
 
+import { ArrowUpRight } from "@phosphor-icons/react/ArrowUpRight";
 import { DeviceMobile } from "@phosphor-icons/react/DeviceMobile";
 import { File } from "@phosphor-icons/react/File";
 import { MagnifyingGlass } from "@phosphor-icons/react/MagnifyingGlass";
@@ -555,7 +556,8 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
           >
-            {copy.readSource} <span aria-hidden="true">↗</span>
+            {copy.readSource}
+            <ArrowUpRight aria-hidden="true" size={18} weight="bold" />
           </a>
         </div>
       </section>
