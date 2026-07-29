@@ -671,9 +671,9 @@ h1 {
   border-radius: 16px;
   background: linear-gradient(
     112deg,
-    rgba(27, 28, 28, 0.82) 0%,
-    rgba(31, 28, 26, 0.74) 48%,
-    rgba(100, 43, 17, 0.58) 100%
+    rgba(24, 25, 25, 0.94) 0%,
+    rgba(29, 27, 26, 0.92) 48%,
+    rgba(83, 39, 20, 0.86) 100%
   );
   box-shadow:
     20px 32px 70px rgba(39, 12, 0, 0.38),
@@ -682,8 +682,8 @@ h1 {
   font-family:
     -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue",
     sans-serif;
-  backdrop-filter: blur(36px) saturate(1.38) brightness(0.88);
-  -webkit-backdrop-filter: blur(36px) saturate(1.38) brightness(0.88);
+  backdrop-filter: blur(96px) saturate(1.12) brightness(0.68);
+  -webkit-backdrop-filter: blur(96px) saturate(1.12) brightness(0.68);
 }
 
 .search-field {
