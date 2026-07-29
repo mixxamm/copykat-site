@@ -55,6 +55,15 @@ input {
   -webkit-tap-highlight-color: transparent;
 }
 
+a[href],
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
 :focus-visible {
   outline: 3px solid var(--blue);
   outline-offset: 4px;
@@ -787,7 +796,6 @@ h1 {
   color: var(--panel-foreground);
   font: inherit;
   text-align: start;
-  cursor: pointer;
 }
 
 .history-row-grouped {
