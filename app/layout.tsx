@@ -18,7 +18,7 @@ const mono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://mixxamm.github.io/copykat-site/";
+const siteUrl = "https://copykat.dev/";
 const iconUrl =
   "https://raw.githubusercontent.com/mixxamm/CopyKat/main/CopyKat/Assets.xcassets/AppIcon.appiconset/icon_512x512.png";
 const title = "CopyKat: Everything you copied, one shortcut away";
@@ -26,7 +26,7 @@ const description =
   "A fast, native clipboard manager for macOS. Search text, images, files, and pinned snippets without leaving the keyboard.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mixxamm.github.io"),
+  metadataBase: new URL(siteUrl),
   title,
   description,
   alternates: {
