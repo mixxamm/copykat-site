@@ -18,16 +18,16 @@ import {
   useEffect,
   useMemo,
   useState,
-  useSyncExternalStore,
   type KeyboardEvent,
 } from "react";
 import {
   localeDirection,
-  resolveLocale,
   translations,
   type Locale,
   type SiteCopy,
 } from "./i18n";
+import { infoTranslations } from "./info-i18n";
+import { useSiteLocale } from "./site-locale";
 
 const DOWNLOAD_URL =
   "https://github.com/mixxamm/CopyKat/releases/latest/download/CopyKat.zip";
@@ -40,16 +40,6 @@ const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 function asset(path: string) {
   return `${BASE_PATH}${path}`;
-}
-
-function subscribeToBrowserLocale() {
-  return () => {};
-}
-
-function getBrowserLocale(): Locale {
-  const browserLanguages =
-    navigator.languages.length > 0 ? navigator.languages : [navigator.language];
-  return resolveLocale(browserLanguages);
 }
 
 type ClipboardItem = {
@@ -155,12 +145,9 @@ function filterClipboardItems(items: ClipboardItem[], query: string) {
 }
 
 export default function Home() {
-  const locale = useSyncExternalStore<Locale>(
-    subscribeToBrowserLocale,
-    getBrowserLocale,
-    () => "en",
-  );
+  const locale = useSiteLocale();
   const copy = translations[locale];
+  const infoCopy = infoTranslations[locale];
   const clipboardItems = useMemo(
     () => createClipboardItems(copy, locale),
     [copy, locale],
@@ -581,7 +568,8 @@ export default function Home() {
           <a href={REPOSITORY_URL} target="_blank" rel="noreferrer">
             GitHub
           </a>
-          <a href="#privacy">{copy.privacy}</a>
+          <a href={asset("/privacy/")}>{copy.privacy}</a>
+          <a href={asset("/support/")}>{infoCopy.support}</a>
         </div>
       </footer>
     </main>
